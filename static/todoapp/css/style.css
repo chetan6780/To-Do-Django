@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav,
+footer {
+  background: linear-gradient(to bottom right, #5c38de, #fc00ff);
+}
+
+i.large {
+  font-size: 2.5rem !important;
+  margin-right: 6px !important;
+  margin-top: 2px;
+}
+
+.collection {
+  margin: 0 1rem 3rem 1rem !important;
+}
+
+.collection-header {
+  padding: 2px !important;
+}
+
+.collection .collection-item {
+  padding-top: 15px !important;
+}
+
+.btn-imp {
+  margin: 26px 0;
+  background: linear-gradient(to bottom right, #5c38de, #fc00ff);
+}
+
+.btn-del {
+  margin-top: -8px !important;
+  padding: 0px 10px !important;
+  margin-left: -3rem !important;
+}
+
+.chc {
+  padding: 2px;
+}
+
+.page-footer {
+  padding: 10px !important;
+}
+
+/* for textarea */
+/* label color */
+.input-field label {
+  color: rgb(221, 37, 215);
+}
+/* label focus color */
+.input-field input[type="text"]:focus + label {
+  color: #fc00ff;
+}
+/* label underline focus color */
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid #fc00ff;
+  box-shadow: 0 1px 0 0 #fc00ff;
+}
+/* valid color */
+.input-field input[type="text"].valid {
+  border-bottom: 1px solid#64dd17;
+  box-shadow: 0 1px 0 0 #64dd17;
+}
+/* invalid color */
+.input-field input[type="text"].invalid {
+  border-bottom: 1px solid #d50000;
+  box-shadow: 0 1px 0 0 #d50000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #8e24aa;
+}
