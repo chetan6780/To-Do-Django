@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <form action="add_todo/" class="col s12" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <h2 class="center">
+                <div class="form-group " style="color: #8e24aa;">
+                    <!-- #8e24aa,fc00ff  -->
+                    <h3><span id="typed"></span></h3>
+                </div>
+            </h2>
+
+            <div class="col s12">
+                <div class="input-field col m10 ">
+                    <i class=" material-icons prefix">mode_edit</i>
+                    <textarea type="text" id="icon_prefix2" class="materialize-textarea" name="content"></textarea>
+                    <label for="icon_prefix2" class="black-text">Add Tasks</label>
+                </div>
+                <div class="col center m2 "><button type="submit"
+                        class="btn btn-primary btn-imp waves-effect ">Add</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ul class="collection with-header z-depth-1">
+    <li class="collection-header center">
+        <h5 class="chc">Here are your tasks for Today, Best of luck!</h5>
+    </li>
+    {% for item in todo_items %}
+    <li class="collection-item z-depth-1">
+        <label>
+            <input type="checkbox" />
+            <span class="black-text">{{ item.text }}</span>
+            <div class="right">
+                <form action="delete_todo/{{ item.id }}/" action='post'>
+                    {% csrf_token %}
+                    <button type="submit" class="waves-effect  btn btn-del" style="background-color:#f44336;"><i
+                            class="material-icons center ">delete</i></button>
+                </form>
+            </div>
+        </label>
+    </li>{% endfor %}
+</ul>
+
+{% endblock content %}
+
+{% block script %}
+<!-- Typed -->
+<script>
+    var typed = new Typed('#typed', {
+        strings: ["Add your tasks here!", " Click on add to add it in your list!"],
+        backSpeed: 25,
+        smartBackspace: true,
+        backDelay: 1200,
+        startDelay: 1000,
+        typeSpeed: 40,
+        loop: false,
+    });
+</script>
+{% endblock script %}
