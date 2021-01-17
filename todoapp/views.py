@@ -38,7 +38,8 @@ def add_contact(request):
 def add_todo(request):
     current_date = timezone.now()
     content = request.POST['content']
-    created_obj = Todo.objects.create(added_date=current_date, text=content)
+    if content!='':
+        created_obj = Todo.objects.create(added_date=current_date, text=content)
     return HttpResponseRedirect('/')
 
 
