@@ -10,4 +10,4 @@ An awesome To Do App made with django.
     <img src="mobile-preview/2.png" alt="end" style="width: 30%; border-radius: 5px;">
 </div>
 
-## Deployed on Heroku click on [Live Demo](https://chetan6780todo.herokuapp.com/)
+## Deployed on Heroku click on [Live Application](https://chetan6780todo.herokuapp.com/)
